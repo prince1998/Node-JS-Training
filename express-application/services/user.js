@@ -1,35 +1,36 @@
-const allUsers = [{
+const allUsers = [
+  {
     id: 1,
-    name: 'James'
-},
-{
+    name: "James",
+  },
+  {
     id: 2,
-    name: 'Mike'
-}
+    name: "Mike",
+  },
 ];
 
 const getAllUsers = () => {
-    return allUsers;
+  return allUsers;
 };
 
 const getUser = (id) => {
-    // filter function will return an array that has been filtered
-    const user = allUsers.filter((eachUser) => eachUser.id == id)
-    return user;
-}
+  // filter function will return an array that has been filtered
+  const user = allUsers.filter((eachUser) => eachUser.id == id);
+  return user;
+};
 
 const insertNewUser = (name) => {
-    const id = allUsers.length + 1; //if we want to create new user, we will increment id by 1
-    let user = {
-        id:id,
-        name:name
-    };
-    allUsers.push(user);
-    return id;
-}
+  const id = allUsers.length + 1; //if we want to create new user, we will increment id by 1
+  let user = {
+    id: id,
+    name: name,
+  };
+  allUsers.push(user);
+  return id;
+};
 
 module.exports = {
-    getAllUsers,
-    getUser,
-    insertNewUser
-}
+  getAllUsers,
+  getUser,
+  insertNewUser,
+};

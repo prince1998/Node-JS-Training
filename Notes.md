@@ -23,7 +23,8 @@ curl -X POST <endpoint>
 Eg: curl -X POST http://localhost:5000/
 
 Conventions to follow while creating APIs
-- We create services; then we fetch data from data from those services 
+
+- We create services; then we fetch data from data from those services
 - APIs must have proper routing so that we can hit proper endpoint and there is clear communication of data between files
 
 http://latentflip.com/loupe - JS Event loop visualizer
@@ -31,9 +32,18 @@ http://latentflip.com/loupe - JS Event loop visualizer
 npm body-parser will allow you to pass data to POST request. Body parser extracts the data object we have passed and makes it available to request body. We will use this as a middleware (between API request and Server response). body-parser exposes the data we pass into request body object.
 
 To make a POST request and pass data in request body (also use body-parser): curl -X POST -d '{"name": "Harry"}' -H 'Content-Type: application/json' http://localhost:5000/api/v1/user
--d parameter is used to specify the data; -H is for header 
+-d parameter is used to specify the data; -H is for header
 
 Standards to follow while creating APIs:
+
 - Create separate folder for separate API endpoints
 - Keep business logic of API in services folder or a helper folder; to fetch data use APIs; to change API logic, see service folder
-- We can create multiple requests for a single endpoint 
+- We can create multiple requests for a single endpoint
+
+The HTTP 201 Created success status response code indicates that the request has succeeded and has led to the creation of a resource.
+
+We use salt to get a different hash for same password
+Eg. salt1 + "password" gives dddddd and salt2 + "password" gives eeeee
+
+To generate a secret key use:
+require('crypto').randomBytes(64).toString('hex')
